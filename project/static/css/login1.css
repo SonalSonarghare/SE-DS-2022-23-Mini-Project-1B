@@ -1,0 +1,138 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.contains
+{	
+	width: 420px;
+	height: 490px;
+	background: #3E3E3E;
+	color: white;
+	top: 58%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 60px 30px;
+	font-family: sans-serif;
+	border-radius: 30px;
+}
+
+.contains img
+{
+	width: 20%;
+	height: 20%;
+	margin-left: 40%;
+	margin-top: -25%;
+	border-radius: 100%;
+}
+
+.contains h1
+{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 50px;
+	font-family: sans-serif;
+}
+
+.contains p
+{
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+.contains p1
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+.contains input[type = "text"],.contains input[type = "password"]
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.contains input[type = "text"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 18px;
+	font-family: sans-serif;
+}
+
+.contains input[type = "password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 18px;
+}
+
+.contains input[type = "submit"]
+{
+	font-style: bold;
+	border: 10px;
+	width: 50%;
+	height: 10%;
+	margin-left: 25%;
+	text-align: center;
+	border: 0px solid;
+	outline: none;
+	border-radius: 30px;
+	cursor: pointer;	
+	font-family: sans-serif;
+}
+
+.contains a
+{
+	color: beige;
+}
+
+.abc
+{	
+	width: 420px;
+	height: 520px;
+	background: #2A2A2A;
+	color: white;
+	top: 50%;
+	left: 65%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.abc input[type = "submit"]
+{
+	font-style: bold;
+	border: 10px;
+	width: 50%;
+	height: 10%;
+	margin-left: 25%;
+	text-align: center;
+	border: 0px solid;
+	outline: none;
+	border-radius: 30px;
+	cursor: pointer;	
+	font-family: sans-serif;
+}
+
+.abc img
+{
+	width: 420px;
+	height: 520px;
+}

@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>
+		Attendance Records
+	</title>
+	{%load static%}
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/attendance-record.css' %} "/>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<boby>
+	<div class="wrapper">
+	<div class="sidebar">
+        <h2>Dashboard</h2>
+            <nav class="main-nav">
+            <ul class="main-nav-ul">
+                <li><a href="admin_dashboard"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="admin_profile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="admin_add_project"><i class="fas fa-plus"></i>Add Project</a></li>
+                <li><a href="#"><i class="fas fa-address-book"></i>Employees<span class="sub-arrow"></span></a>
+            
+                    <ul>
+                        <li><a href="admin_add_emp"><i class="fas fa-user-plus"></i>Add Employee</a></li>
+                        <li><a href="attendance_record"><i class="fas fa-clipboard"></i>Assign Task</a></li>
+                        <li><a href="show_emp"><i class="fas fa-users"></i>Show All Employee</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+            </nav>
+    </div>
+	</div>
+		<div class="abc">
+			<h2>
+				Assign task to Employee<br>
+			</h2>
+				<form method="POST">
+					{% csrf_token %}
+					<label for="emp_id">Employee ID:</label>
+					<input type="text" id="emp_id" name="emp_id"><br><br>
+					<label for="emp_name">Employee Name:</label>
+					<input type="text" id="emp_name" name="emp_name"><br><br>
+					<label for="dept">Department:</label>
+					<input type="text" id="dept" name="dept"><br><br>
+					<label for="task_desc">Task Description:</label>
+					<textarea id="task_desc" name="task_desc"></textarea><br><br>
+					<label for="dead_line">Deadline:</label>
+					<input type="date" id="dead_line" name="dead_line"><br><br>
+					<input type="submit" value = "submit">
+				  </form>
+</div>
+
+</body>
+</html>
