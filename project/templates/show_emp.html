@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>
+		Employees
+	</title>
+	{%load static%}
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/attendance-record.css' %} "/>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<boby>
+	<div class="wrapper">
+	<div class="sidebar">
+        <h2>Dashboard</h2>
+        <nav class="main-nav">
+            <ul class="main-nav-ul">
+                <li><a href="admin_dashboard"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="admin_profile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="admin_add_project"><i class="fas fa-plus"></i>Add Project</a></li>
+                <li><a href="#"><i class="fas fa-address-book"></i>Employees<span class="sub-arrow"></span></a>
+            
+                    <ul>
+                        <li><a href="admin_add_emp"><i class="fas fa-user-plus"></i>Add Employee</a></li>
+                        <li><a href="attendance_record"><i class="fas fa-clipboard"></i>Assign Task</a></li>
+                        <li><a href="show_emp"><i class="fas fa-users"></i>Show All Employee</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+            </nav>
+    </div>
+	</div>
+		<div class="abc">
+			<h2>
+				All Employees Information<br>
+		  </h2>
+		  <p>
+			<table style = "width: 100%">
+				<tr  class="bg-dark" style="color: white; font-size: 20px;">
+					<td>ID</td>
+					<td>Name</td>
+					<td>Email</td>
+					<td>Phone.No</td>
+					<td>Department</td>
+				</tr>
+			{%for k,v in fetch_employees.items%}
+						<tr>
+						<td>{{v.0}}</td>   
+						<td>{{v.1}} {{v.2}}</td>
+						<td>{{v.3}}</td>
+						<td>{{v.4}}</td>
+						<td>{{v.6}}</td>
+					<tr>
+				{%endfor%}
+			</table>
+		</p>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+<head>
+	<title>
+        Dashboard
+    </title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/assigned_task.css' %} " />
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+            <nav class="main-nav">
+            <ul class="main-nav-ul">
+                <li><a href="emp_dashboard"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="emp_profile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="mark_attendance"><i class="fas fa-address-card"></i>Mark Attendance</a></li>
+                <li><a href="#"><i class="fas fa-address-book"></i>Employees<span class="sub-arrow"></span></a>
+    
+                    <ul>
+                        <li><a href="emp_attendance_record"><i class="fas fa-clipboard"></i>Attendance Records</a></li>
+                        <li><a href="emp_show_emp"><i class="fas fa-users"></i>Show All Employee</a></li>
+                    </ul>
+                </li>
+      
+                <li><a href="/"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+            </nav>
+    </div>
+    <div class="main_content">
+        <div class="header">
+            <h2>ASSIGNED PROJECT</h2>
+        </div>
+        <div style="margin: 10px;">
+        <p >
+            
+        {%for k,v in Book.items%}
+        {% if k == 'title'%}
+        <h1>Project Title:{{v}}</h1>
+        {%endif%}
+        <br>
+        {%if k == 'desc'%}
+        <b>Project Description: {{v}}</b>
+        {%endif%}
+        {%endfor%}<br>
+            <br>
+            <form class="up" method = "POST" enctype="multipart/form-data">
+             {% csrf_token %}
+            <center>
+            <div class="input-group">
+                <input type="file" name="file_location" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            </div><br><br>
+            <input class="btn btn-outline-dark" type="submit" style="padding-left: 2%; padding-right: 2%;"></button>
+            </center>
+            </form>
+            <br>
+            <div>
+                <form method = 'POST'>
+                    {% csrf_token %}
+                <table style = "width: 100%">
+                    <tr class="bg-dark" style="color: white; font-size: 20px;">
+                        <td>ID</td>
+                        <td>Emp_ID</td>
+                        <td>Name</td>
+                        <td>File Name</td>
+                        <td>Date</td>
+                    </tr>
+                {%for k,v in file_fetch_data.items%}
+                            <tr>
+                            <td>{{v.0}}</td>   
+                            <td>{{v.1}} {{v.2}}</td>
+                            <td>{{v.2}}</td>
+                            <td><input type="submit" value = "{{v.3}}" name = "file_name" style = "border: none;background-color:rgb(252, 252, 252);color:blue" ></td>
+                            <td>{{v.4}}</td>
+                        <tr>
+                        {%endfor%}
+                </table>
+               </form>
+            </div>
+
+            <!-- <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    </tr>
+                        {% for j in data.items%}
+                        <tr>
+                            {%for i in j%}
+                            <td>
+                            {{i.0}}
+                            {{i.1}}
+                            {{i.2}}
+                         </td>
+                        {%endfor%}
+                        </tr>
+                        {%endfor%}
+                      
+                </tbody>
+              </table>
+
+        </p>-->
+
+    </div>
+
+    <div>
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    </div>
+    <div style = "padding-left: 10px; padding-bottom: 10px; width: 100%;">
+        <table style = "width: 100%;">
+            <tr class="bg-dark" style="color: white; font-size: 20px;">
+                <td>ID</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Phone.No</td>
+                <td>Department</td>
+            </tr>
+        {%for k,v in fetch_employee.items%}
+                    <tr>
+                    <td>{{v.0}}</td>   
+                    <td>{{v.1}} {{v.2}}</td>
+                    <td>{{v.3}}</td>
+                    <td>{{v.4}}</td>
+                    <td>{{v.6}}</td>
+                <br>
+                <tr>
+                {%endfor%}
+            </table>
+
+
+    </div>
+</body>
+</html>

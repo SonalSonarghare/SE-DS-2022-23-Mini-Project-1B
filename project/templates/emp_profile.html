@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>
+		Profile
+	</title>
+	{%load static%}
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/profile1.css' %} " />	
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<body>
+	<div class="wrapper">
+	<div class="sidebar">
+        <h3>Dashboard</h3>
+                        <nav class="main-nav">
+            <ul class="main-nav-ul">
+                <li><a href="emp_dashboard"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="emp_profile"><i class="fas fa-user"></i>Profile</a></li>
+                <!-- <li><a href="mark_attendance"><i class="fas fa-address-card"></i>Mark Attendance</a></li> -->
+                <li><a href="#"><i class="fas fa-address-book"></i>Employees<span class="sub-arrow"></span></a>
+    
+                    <ul>
+                        <!-- <li><a href="emp_attendance_record"><i class="fas fa-clipboard"></i>Attendance Records</a></li> -->
+                        <li><a href="emp_show_emp"><i class="fas fa-users"></i>Show All Employee</a></li>
+                    </ul>
+                </li>
+      
+                <li><a href="/"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+            </nav>
+
+    </div>
+	</div>
+
+	<div class="abc">
+		<center>
+		<img src="{% static 'img/logo.png' %}">
+		<h2>
+		{% for k,v in emp_details.items%}
+			{{v.1}} {{v.2}} <br>
+		</h2>
+			
+		</center>
+		<p>
+			<br>
+			Your Employee ID is: {{v.0}} <br> 
+			Your Phone Number is: {{v.4}} <br>
+			Your email address is: {{v.3}}<br>
+			Gender is: {{v.5}}
+			<!-- <br><button>Edit Profile</button>  -->
+		</p>
+		{%endfor%}
+	</div>
+</body>
+</html>
